@@ -3,10 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
-.prettierrc
-.eslintrc
-.env
+.pnp.js 
 
 # testing
 /coverage
