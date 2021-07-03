@@ -30,11 +30,9 @@
   },
   "eslintConfig": {
     "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/prop-types": 0
-    }
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
