@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import SectionTitle from '../components/SectionTitle';
 import ProjectItem from '../components/ProjectItem';
@@ -21,13 +21,27 @@ const VFXStyles = styled.div`
 `;
 
 export default function VFX() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
   return (
     <VFXStyles>
-      <div className="container">
-        <SectionTitle heading="Visual Effects" subheading="some of my recent experiments" />
-        <div className="projects__allItems">
+      <div className='container'>
+        <SectionTitle
+          heading='Visual Effects'
+          subheading='some of my recent experiments'
+        />
+        <div className='projects__allItems'>
           {projectData.map((item) => (
-            <ProjectItem key={item.id} title={item.name} url={item.url} img={item.img} />
+            <ProjectItem
+              key={item.id}
+              title={item.name}
+              url={item.url}
+              img={item.img}
+            />
           ))}
         </div>
       </div>

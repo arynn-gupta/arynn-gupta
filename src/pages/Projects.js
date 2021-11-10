@@ -51,6 +51,10 @@ const ProjectsStyles = styled.div`
 `;
 
 export default function Projects() {
+  useEffect(() => {window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });});
   const [searchText, setSearchText] = useState('');
   const [projectData, setProjectData] = useState(ProjectInfo);
   useEffect(() => {

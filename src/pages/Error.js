@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import ErrorImg from '../assets/images/404.png';
 import Button from "../components/Button";
@@ -63,6 +63,12 @@ const ErrorStyles = styled.div`
 `;
 
 export default function Error() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
   return (
     <ErrorStyles>
       <div className="container">

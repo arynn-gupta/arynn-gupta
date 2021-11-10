@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import { HiBriefcase } from 'react-icons/hi';
 import { MdSchool } from 'react-icons/md';
@@ -87,6 +87,12 @@ const AboutPageStyles = styled.div`
 `;
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
   return (
     <AboutPageStyles>
       <div className="container">
