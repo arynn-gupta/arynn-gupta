@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
 
@@ -53,13 +52,3 @@ export default function FooterCol({
     </ColStyles>
   );
 }
-FooterCol.propTypes = {
-  heading: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.string,
-      title: PropTypes.string,
-      path: PropTypes.string,
-    }),
-  ).isRequired,
-};

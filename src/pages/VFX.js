@@ -27,7 +27,7 @@ export default function VFX() {
         <SectionTitle heading="Visual Effects" subheading="some of my recent experiments" />
         <div className="projects__allItems">
           {projectData.map((item) => (
-            <ProjectItem key={item.id} title={item.name} desc={item.desc} img={item.img} />
+            <ProjectItem key={item.id} title={item.name} url={item.url} img={item.img} />
           ))}
         </div>
       </div>

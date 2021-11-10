@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const ButtonStyles = styled.div`
   margin-top: 2rem;
@@ -65,14 +64,6 @@ export default function Button({
     </ButtonStyles>
   );
 }
-
-Button.propTypes = {
-  btnText: PropTypes.string.isRequired,
-  btnLink: PropTypes.string,
-  type: PropTypes.string,
-  color: PropTypes.string,
-  outline: PropTypes.string,
-};
 
 Button.defaultProps = {
   outline: 'var(--accent)',

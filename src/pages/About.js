@@ -202,7 +202,7 @@ export default function About() {
                 },
               ]}
             />
-            <AboutInfoItem title="Design" items={['Photoshop', 'After Effects', 'Figma']} />
+            <AboutInfoItem title="Design" items={['Photoshop', 'After Effects', 'Figma', 'Blender', 'Cinema4D', 'Houdini', 'Unreal Engine']} />
           </div>
           <div className="about__info__item">
             <h1 className="about__info__heading">Resume</h1>

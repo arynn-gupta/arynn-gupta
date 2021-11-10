@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { MdDesktopMac } from "react-icons/md";
 import PText from "./PText";
 
@@ -33,12 +32,3 @@ export default function ServicesSectionItem({
     </ItemStyles>
   );
 }
-
-ServicesSectionItem.propTypes = {
-  icon: PropTypes.shape({
-    color: PropTypes.string,
-    size: PropTypes.string,
-  }).isRequired,
-  title: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-};

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { v4 as uuid } from 'uuid';
 import 'react-circular-progressbar/dist/styles.css';
@@ -111,16 +110,3 @@ export default function ProgressBarItem({
     </ProgressBarItemStyles>
   );
 }
-
-ProgressBarItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      skillName: PropTypes.string,
-      desc: PropTypes.string,
-      value: PropTypes.string,
-      textColor: PropTypes.string,
-      pathColor: PropTypes.string,
-    }),
-  ).isRequired,
-};

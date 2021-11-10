@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdPlace } from 'react-icons/md';
-import PropTypes from 'prop-types';
 
 const ContactInfoItemStyles = styled.div`
   padding: 2rem;
@@ -48,12 +47,3 @@ export default function ContactInfoItem({ icon = <MdPlace />, text = 'info' , pa
     </ContactInfoItemStyles>
   );
 }
-
-ContactInfoItem.propTypes = {
-  icon: PropTypes.shape({
-    color: PropTypes.string,
-    size: PropTypes.string,
-  }).isRequired,
-  text: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-};

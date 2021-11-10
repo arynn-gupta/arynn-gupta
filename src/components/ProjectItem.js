@@ -1,20 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import projectImg from "../assets/images/projectImg.png";
+import React from 'react';
+import styled from 'styled-components';
+import projectBg from '../assets/images/projectBg.png';
 
 const ProjectItemStyles = styled.div`
   .projectItem__img {
     width: 100%;
     height: 400px;
+    background: url(${projectBg});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     border-radius: 12px;
     overflow: hidden;
     display: inline-block;
     border: 3px solid var(--gray-2);
-    img {
-      height: 100%;
-    }
   }
   .projectItem__info {
     margin-top: 1rem;
@@ -38,28 +37,18 @@ const ProjectItemStyles = styled.div`
   }
 `;
 
-export default function ProjectItem({
-  img = projectImg,
-  title = "project name",
-  desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, sequi ut nam expedita placeat, temporibus earum voluptatem ratione minima ducimus, quam laborum suscipit qui accusantium vero numquam repellendus explicabo incidunt!"
-}) {
+export default function ProjectItem({ title, desc, img, url }) {
   return (
     <ProjectItemStyles>
-      <Link to="/Projects" className="projectItem__img">
-        <img src={img} alt="project img" />
-      </Link>
-      <div className="projectItem__info">
-        <Link to="github.com">
-          <div className="projectItem__title">{title}</div>
-        </Link>
-        <p className="projectItem__desc">{desc}</p>
+      <div className='projectItem__img'>
+        <a href={url} target='_blank' rel='noreferrer'>
+          <img src={img} alt='' />
+        </a>
+      </div>
+      <div className='projectItem__info'>
+        <div className='projectItem__title'>{title}</div>
+        <p className='projectItem__desc'>{desc}</p>
       </div>
     </ProjectItemStyles>
   );
 }
-
-ProjectItem.propTypes = {
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-};

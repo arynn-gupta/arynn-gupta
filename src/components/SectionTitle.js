@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const SectionTitleStyles = styled.div`
   text-align: center;
@@ -36,8 +35,3 @@ export default function SectionTitle({
     </SectionTitleStyles>
   );
 }
-
-SectionTitle.propTypes = {
-  subheading: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired
-};

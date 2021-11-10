@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+import emailjs from 'emailjs-com';
+import apiKey from '../assets/data/emailjs';
 
-const ContactFormStyles = styled.form`
+const ContactFormStyles = styled.div`
   width: 100%;
   .form__group {
     width: 100%;
@@ -26,63 +28,68 @@ const ContactFormStyles = styled.form`
     min-height: 250px;
     resize: vertical;
   }
-  button[type='submit'] {
-    background-color: var(--gray-1);
-    color: var(--black);
-    font-size: 2rem;
-    display: inline-block;
+  input[type='submit'] {
+    padding: 0.1rem;
+    z-index: 1;
+    height: 5rem;
+    width: 18rem;
+    border: 0;
     outline: none;
-    border: none;
-    padding: 1rem 4rem;
-    border-radius: 8px;
+    background-color: var(--accent);
+    color: var(--dark-bg);
+    font-size: 2rem;
+    font-family: 'Ginger Bold';
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
     cursor: pointer;
   }
 `;
 
 export default function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+    console.log(name, email, message);
+
+    emailjs
+      .sendForm('gmail', apiKey.TEMPLATE_ID, form.current, apiKey.USER_ID)
+      .then(
+        (result) => {
+          e.target.name.value = '';
+          e.target.email.value= '';
+          e.target.message.value='Message sent successfully :)'; 
+        },
+        (error) => {
+          e.target.name.value = '';
+          e.target.email.value = '';
+          e.target.message.value = "Can't send message at this moment :(";
+        }
+      );
+  };
   return (
     <div>
       <ContactFormStyles>
-        <div className="form__group">
-          <label htmlFor="name">
-            Your name
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form__group">
-          <label htmlFor="email">
-            Your email
-            <input
-              type="email"
-              id="email"
-              email="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form__group">
-          <label htmlFor="message">
-            Your name
-            <textarea
-              type="text"
-              id="message"
-              message="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </label>
-        </div>
-        <button type="submit">Send</button>
+        <form ref={form} onSubmit={sendEmail}>
+          <div className='form__group'>
+            <label htmlFor='name'>Name</label>
+            <input type='text' id='name' name='name' required />
+          </div>
+          <div className='form__group'>
+            <label htmlFor='email'>Email</label>
+            <input type='email' id='email' name='email' required />
+          </div>
+          <div className='form__group'>
+            <label htmlFor='message'>Message</label>
+            <textarea id='message' name='message' required />
+          </div>
+          <input type='submit' value='Send' />
+        </form>
       </ContactFormStyles>
     </div>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import { HiBriefcase } from "react-icons/hi";
 
@@ -129,19 +128,3 @@ export default function TimelineItem({
     </TimelineItemStyles>
   );
 }
-
-TimelineItem.propTypes = {
-  icon: PropTypes.shape({
-    color: PropTypes.string,
-    size: PropTypes.string,
-  }).isRequired,
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      time: PropTypes.string,
-      desg: PropTypes.string,
-      org: PropTypes.string,
-      desc: PropTypes.string,
-    })
-  ).isRequired,
-};

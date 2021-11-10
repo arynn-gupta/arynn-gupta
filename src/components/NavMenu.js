@@ -98,16 +98,6 @@ const NavMenuStyles = styled.div`
         margin-bottom: 1rem;
       }
     }
-    .cursor {
-      width: 3rem;
-      height: 3rem;
-      background-color: var(--white);
-      position: fixed;
-      border-radius: 50%;
-      pointer-events: none;
-      mix-blend-mode: difference;
-      transform: translate(-50%, -50%);
-    }
     ul li:hover ~ .cursor {
       transform: scale(2) translate(-25%, -25%);
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import PText from "./PText";
 
@@ -57,8 +56,3 @@ export default function AboutInfoItem({
     </AboutItemStyles>
   );
 }
-
-AboutInfoItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
