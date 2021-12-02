@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import projectBg from '../assets/images/projectBg.png';
 
 const ProjectItemStyles = styled.div`
   .projectItem__img {
     width: 100%;
     height: 400px;
-    background: url(${projectBg});
+    background: var(--dark-bg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: 12px;
     overflow: hidden;
-    display: inline-block;
     border: 3px solid var(--gray-2);
+    padding: 0;
+    img {
+      width: 100%;
+    }
   }
   .projectItem__info {
     margin-top: 1rem;

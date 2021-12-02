@@ -1,10 +1,10 @@
-import { v4 as uuid } from "uuid";
+import { v4 as uuid } from 'uuid';
 import flappy from '../images/projects/flappy.png';
 import materialui from '../images/projects/material-ui.png';
 import bullseye from '../images/projects/bullseye.png';
 import ocr from '../images/projects/ocr.png';
 import arshop from '../images/projects/arshop.png';
-
+import greywing from '../images/projects/greywing.png';
 
 const projects = [
   {
@@ -13,6 +13,13 @@ const projects = [
     desc: 'An Augmented Reality based E-commerce App built using Flutter and ARCore.',
     img: arshop,
     url: 'https://github.com/arynn-gupta/ar_shop',
+  },
+  {
+    id: uuid(),
+    name: 'Greywing UI',
+    desc: 'A web experience made for greywing.',
+    img: greywing,
+    url: 'https://github.com/arynn-gupta/greywing',
   },
   {
     id: uuid(),

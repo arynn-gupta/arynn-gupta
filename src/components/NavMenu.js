@@ -105,13 +105,7 @@ const NavMenuStyles = styled.div`
 `;
 
 export default function NavMenu() {
-  const [cursorX, setCursorX] = useState();
-  const [cursorY, setCursorY] = useState();
   const [showNav, SetShowNav] = useState(false);
-  window.addEventListener('mousemove', (e) => {
-    setCursorX(e.pageX);
-    setCursorY(e.pageY);
-  });
   return (
     <NavMenuStyles>
       <div
@@ -194,13 +188,6 @@ export default function NavMenu() {
             Contact
           </NavLink>
         </li>
-        <div
-          className="cursor"
-          style={{
-            left: `${cursorX}px`,
-            top: `${cursorY}px`,
-          }}
-        />
       </ul>
     </NavMenuStyles>
   );
