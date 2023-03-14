@@ -17,7 +17,7 @@ Name: Aryan Gupta
 Location: UttarPradesh, India
 Title : Full Stack Developer | Motion Designer
 Hobbies: Competitive Programming, VFX/CGI, Gaming
-Portfolio : aryangupta.herokuapp.com
+Portfolio : arynn-gupta.vercel.app
 ```
 </br>
 
