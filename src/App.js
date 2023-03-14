@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './components/Terrain';
@@ -22,26 +22,14 @@ export default function App() {
     <>
       <Router>
         <NavMenu />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/Projects">
-            <Projects />
-          </Route>
-          <Route path="/VFX">
-            <VFX />
-          </Route>
-          <Route path="/About">
-            <About />
-          </Route>
-          <Route path="/Contact">
-            <Contact />
-          </Route>
-          <Route path="*">
-            <Error />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path='/' exact='true' element={<Home />} />
+          <Route path='/Projects' element={<Projects />} />
+          <Route path='/VFX' element={<VFX />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Contact' element={<Contact />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
         <Footer />
         <MusicWave />
       </Router>
